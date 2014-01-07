@@ -49,7 +49,13 @@ $(function() {
             + document.documentElement.scrollTop + parseInt(self.getComputedStyle("fontSize"))
           };
       }
+
+      if ($('#textarea_simulator').length === 0) {
+        cal.simulator.appendTo(document.body);
+      }
+
       cal.simulator.empty();
+
       // clone primary styles to imitate textarea
       $.each(cal.primaryStyles, function(index, styleName) {
         self.cloneStyle(cal.simulator, styleName);
